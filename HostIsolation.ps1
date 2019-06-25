@@ -53,14 +53,14 @@ function List-SavedFWRules
 function Disable-AllFWRules
 {
     Import-Csv $path | Foreach-Object { 
-        Disable-NetFirewallRule -Name "$_.Name" | Out-File -FilePath $debug -Append
+        Disable-NetFirewallRule -Name $_.Name | Out-File -FilePath $debug -Append
     } 
 }
 
 function Enable-AllFWRules
 {
     Import-Csv $path | Foreach-Object { 
-        Enable-NetFirewallRule -Name "$_.Name" | Out-File -FilePath $debug -Append
+        Enable-NetFirewallRule -Name $_.Name | Out-File -FilePath $debug -Append
     } 
 }
 
